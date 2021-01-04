@@ -7,14 +7,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "scores")
-public class Scores {
-    @Column(name = "id")
+public class Score { // в единственном числе так как одна оценка
+    @Column(name = "id") // score_id
     @Id
     Long id;
     @Column(name = "score")
     Double score;
-
-    public Scores() {
+    // дабл нельзя использовать при суммировании, умножении и т. д. Надо BigDecimal
+// таблицу и колонки нельзя называть одинаково
+    public Score() {
     }
 
     public void setId(Long id) {
@@ -33,7 +34,7 @@ public class Scores {
         return score;
     }
 
-    public Scores(Long id, Double score) {
+    public Score(Long id, Double score) {
         this.id = id;
         this.score = score;
     }
