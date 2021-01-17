@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet  author="Julia"  id="17/01/1">
+        <createTable tableName="scores">
+            <column name="score_id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="score" type="double precision">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet  author="Julia"  id="17/01/2">
+        <insert tableName="scores">
+            <column name="score_id">1</column>
+            <column name="score">3.5</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">2</column>
+            <column name="score">3.65</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">3</column>
+            <column name="score">4</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">4</column>
+            <column name="score">3.85</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">5</column>
+            <column name="score">4</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">6</column>
+            <column name="score">3.65</column>
+        </insert>
+        <insert tableName="scores">
+            <column name="score_id">7</column>
+            <column name="score">100</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="17/01/3" author="Julia">
+        <delete tableName="scores">
+            <where>score_id = 7</where>
+        </delete>
+    </changeSet>
+
+
+</databaseChangeLog>

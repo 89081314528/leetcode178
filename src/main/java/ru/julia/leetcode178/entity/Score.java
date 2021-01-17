@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "scores")
+@Table(name = "scores")// название таблицы во множ числе
 public class Score { // в единственном числе так как одна оценка
-    @Column(name = "id") // score_id
+    @Column(name = "score_id") // score_id
     @Id
     Long id;
     @Column(name = "score")
